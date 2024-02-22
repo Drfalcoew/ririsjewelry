@@ -1,0 +1,53 @@
+
+
+/* PRODUCT COMPONENT */
+
+.products-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 3vh 0 10vh 0;
+    height: 90vh;
+    width: 85%;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+.products-title-container {
+    display: flex;
+    justify-content: center; /* Center the title */
+    margin-bottom: 20px; /* Add some space between title and products */
+}
+
+.products-content-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow products to wrap to new rows */
+    justify-content: center; /* Center the products horizontally */
+}
+
+.product-paper {
+    width: calc(25% - 40px); /* 33.33% for each product with some margin */
+    padding: 20px;
+    margin: 20px;
+    background-color: var(--highlight) !important;
+    position: relative;
+    cursor: pointer;
+}
+
+.product-paper:hover {
+    background-color: var(--highlight-hover) !important;
+    transition: background-color 1s ease;
+}
+
+.price-container {
+    position: absolute;
+    bottom: 10px; /* Adjust as needed */
+    left: 25px; /* Adjust as needed */
+}
+
+.add-to-cart-container {
+    position: absolute;
+    bottom: 10px; /* Adjust as needed */
+    right: 25px; /* Adjust as needed */
+}
