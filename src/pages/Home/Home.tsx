@@ -1,12 +1,14 @@
+import HeroPanel from '../../components/HeroPanel';
 import './Home.css';
-import Products from "../../components/Products/Products";
 
 
 const Home = () => {
 
     return (
         <div className="home-container">
-            <Products />
+            <div className="home-title-container">
+                <HeroPanel />
+            </div>
         </div>
     );
 }

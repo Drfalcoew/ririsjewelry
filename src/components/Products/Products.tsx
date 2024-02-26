@@ -8,32 +8,38 @@ const Products = () => {
         {
             name: 'Etherial Rose',
             description: 'A beautiful bracelet for the spring season',
-            image: "https://source.unsplash.com/random"
+            image: "https://source.unsplash.com/random",
+            price: 2000
         },
         {
             name: 'Blue & White Bracelet',
             description: 'A beautiful bracelet for the spring season',
-            image: "https://source.unsplash.com/random"
+            image: "https://source.unsplash.com/random",
+            price: 749
         },
         {
             name: 'Crimson Bandito',
             description: 'A stylish spring bracelet',
-            image: "https://source.unsplash.com/random"
+            image: "https://source.unsplash.com/random",
+            price: 1899
         },
         {
             name: 'Spring Bracelet',
             description: 'A beautiful bracelet for the spring season',
-            image: "https://source.unsplash.com/random"
+            image: "https://source.unsplash.com/random",
+            price: 699
         },
         {
             name: 'Blue & White Bracelet',
             description: 'A beautiful bracelet for the spring season',
-            image: "https://source.unsplash.com/random"
+            image: "https://source.unsplash.com/random",
+            price: 749
         },
         {
             name: 'Violet Salamander',
             description: 'A stylish spring bracelet',
-            image: "https://source.unsplash.com/random"
+            image: "https://source.unsplash.com/random",
+            price: 999
         },
     ]
 

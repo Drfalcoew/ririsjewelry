@@ -38,6 +38,7 @@ const GlobalStyles = createGlobalStyle<GlobalStyleProps>`
     --accent-color: ${(props) => props.darkMode ? DarkMode.accentColor : LightMode.accentColor};
     --highlight: ${(props) => props.darkMode ? DarkMode.highlight : LightMode.highlight};
     --shadow: ${(props) => props.darkMode ? DarkMode.shadow : LightMode.shadow};
+    
   }
   /* other styles */
   .item-container {

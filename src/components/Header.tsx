@@ -10,7 +10,7 @@ const Header = () => {
     return (
         <div className="header-container">
             <div className="header-container-left">
-                <Link to="/" className="header-item">riri's jewelry</Link>           
+                <Link to="/" className="header-item">RiRi's Jewelry</Link>           
             </div>
             <div className="header-container-right">
                 <button className='cart-btn' onClick={() => {

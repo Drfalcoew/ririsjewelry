@@ -9,8 +9,9 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home/Home';
 import Drawer from './components/Drawer/Drawer';
+import Products from './components/Products/Products';
 
-ReactGA.initialize('G-KGT5LD5SZQ');
+// ReactGA.initialize('G-KGT5LD5SZQ');
 
 function App() {
 
@@ -24,9 +25,14 @@ function App() {
         <div className="App">
             <Header />
             <Drawer />
-            <Routes>
-              <Route path="/" Component={Home} />
-            </Routes>
+            <div className="app-content-container">
+              <Routes>
+                <Route path="/" Component={Home} />
+                <Route path="/products" Component={Products} />
+                <Route path="/about" element={<div>About</div>} />
+                <Route path="/contact" element={<div>Contact</div>} />
+              </Routes>
+            </div>
             <Footer />
         </div>
       </UserSettingsProvider>
