@@ -1,6 +1,6 @@
 import React from 'react';
 import './Components.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@mui/material';
 
 const HeroPanel = () => {

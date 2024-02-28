@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './Products.css'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { ProductProps } from '../../model/Models'

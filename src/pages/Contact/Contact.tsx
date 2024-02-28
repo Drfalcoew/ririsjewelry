@@ -16,9 +16,8 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert
 });
 
 const Contact = () => {
-    const [alertProps, setAlertProps] = useState<MyAlertProps>({ severity: 'info' });
+    const [alertProps,] = useState<MyAlertProps>({ severity: 'info' });
     const [showAlert, setShowAlert] = useState(false);
-    const email = 'drew.ng3nuity@gmail.com';
 
     const handleClose = (_event?: React.SyntheticEvent | Event, reason?: string) => {
         if (reason === 'clickaway') {
