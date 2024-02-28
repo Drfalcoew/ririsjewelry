@@ -3,7 +3,7 @@ import HomeIcon from '@mui/icons-material/HomeOutlined';
 import InfoIcon from '@mui/icons-material/InfoOutlined';
 import EmailIcon from '@mui/icons-material/EmailOutlined';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import ShoppingBasketOutlinedIcon from '@mui/icons-material/ShoppingBasketOutlined';
+import StorefrontIcon from '@mui/icons-material/Storefront';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Link } from 'react-router-dom';
 import './Drawer.css';
@@ -15,7 +15,7 @@ const Drawer = () => {
 
     const pageList = [
         { name: 'Home', icon: <HomeIcon />, link: '/' },
-        { name: 'Shop', icon: < ShoppingBasketOutlinedIcon/>, link: '/products' },
+        { name: 'Shop', icon: < StorefrontIcon/>, link: '/products' },
         { name: 'About', icon: <InfoIcon />, link: '/about' },
         { name: 'Contact', icon: <EmailIcon />, link: '/contact' },
     ];

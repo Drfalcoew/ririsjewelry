@@ -5,7 +5,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 3vh 0 10vh 0;
+    padding: 10vh 0 10vh 0;
     height: 90vh;
     width: 85%;
     overflow: scroll;
@@ -33,11 +33,13 @@
   }
   
   .header-logo {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    margin-right: 30px;
+    max-height: 7vh;
     object-fit: cover;
+    background-color: var(--shadow);
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: var(--highlight);
+    border-style: solid;
   }
 
   .hero-image {

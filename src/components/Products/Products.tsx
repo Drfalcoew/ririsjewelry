@@ -51,7 +51,8 @@ const Products = () => {
             <div className="products-content-container">
                 {products.map((product, index) => {
                     return (
-                        <Product key={index} title={product.name} description={product.description} 
+                        <Product key={index} title={product.name} description={product.description}
+                        price={product.price} id={index}
                         image={product.image} />
                     )
                 })

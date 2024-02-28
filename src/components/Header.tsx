@@ -10,8 +10,11 @@ const Header = () => {
     return (
         <div className="header-container">
             <div className="header-container-left">
-                <Link to="/" className="header-item">RiRi's Jewelry</Link>           
+                <Link to="/" className="header-item">
+                    <img src='/imgs/riri_icon.png' alt='preppy jewelry' className='header-logo' draggable='false' />
+                </Link>           
             </div>
+
             <div className="header-container-right">
                 <button className='cart-btn' onClick={() => {
                         nav('/cart')
