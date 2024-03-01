@@ -7,38 +7,38 @@ const Products = () => {
     const products = [
         {
             name: 'Etherial Rose',
-            description: 'A beautiful bracelet for the spring season',
-            image: "https://source.unsplash.com/random",
+            description: 'Preppy Bracelets | Smiley Face Bracelet | Rainbow Heishi Pearl Bracelet | Trendy Star White Bead Bracelet | Disc Beads | Funky Jewelry',
+            image: "/imgs/preppy_bracelet.webp",
             price: 2000
         },
         {
             name: 'Blue & White Bracelet',
-            description: 'A beautiful bracelet for the spring season',
-            image: "https://source.unsplash.com/random",
+            description: 'Preppy Bracelets | Smiley Face Bracelet | Rainbow Heishi Pearl Bracelet | Trendy Star White Bead Bracelet | Disc Beads | Funky Jewelry',
+            image: "/imgs/preppy_bracelet.webp",
             price: 749
         },
         {
             name: 'Crimson Bandito',
-            description: 'A stylish spring bracelet',
-            image: "https://source.unsplash.com/random",
+            description: 'Preppy Bracelets | Smiley Face Bracelet | Rainbow Heishi Pearl Bracelet | Trendy Star White Bead Bracelet | Disc Beads | Funky Jewelry',
+            image: "/imgs/preppy_bracelet.webp",
             price: 1899
         },
         {
             name: 'Spring Bracelet',
-            description: 'A beautiful bracelet for the spring season',
-            image: "https://source.unsplash.com/random",
+            description: 'Preppy Bracelets | Smiley Face Bracelet | Rainbow Heishi Pearl Bracelet | Trendy Star White Bead Bracelet | Disc Beads | Funky Jewelry',
+            image: "/imgs/preppy_bracelet.webp",
             price: 699
         },
         {
             name: 'Blue & White Bracelet',
-            description: 'A beautiful bracelet for the spring season',
-            image: "https://source.unsplash.com/random",
+            description: 'Preppy Bracelets | Smiley Face Bracelet | Rainbow Heishi Pearl Bracelet | Trendy Star White Bead Bracelet | Disc Beads | Funky Jewelry',
+            image: "/imgs/preppy_bracelet.webp",
             price: 749
         },
         {
             name: 'Violet Salamander',
-            description: 'A stylish spring bracelet',
-            image: "https://source.unsplash.com/random",
+            description: 'Preppy Bracelets | Smiley Face Bracelet | Rainbow Heishi Pearl Bracelet | Trendy Star White Bead Bracelet | Disc Beads | Funky Jewelry',
+            image: "/imgs/preppy_bracelet.webp",
             price: 999
         },
     ]

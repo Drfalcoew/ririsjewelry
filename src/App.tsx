@@ -14,14 +14,18 @@ import Banner from './components/Banner';
 import Contact from './pages/Contact/Contact';
 import About from './pages/About/About';
 import ProductDetails from './components/Products/ProductDetails';
+import Cart from './pages/Cart/Cart';
 
 // ReactGA.initialize('G-KGT5LD5SZQ');
+
+
 
 function App() {
 
   useEffect(() => {
     ReactGA.send({ hitType: 'pageview', page: window.location.pathname });
   }, []);
+
   return (
     <BrowserRouter>
       <UserSettingsProvider>
@@ -36,7 +40,8 @@ function App() {
                 <Route path="/products" Component={Products} />
                 <Route path="/about" Component={About} />
                 <Route path="/contact" Component={Contact} />
-                <Route path="product/:id" Component={ProductDetails} />
+                <Route path="/product/:id" Component={ProductDetails} />
+                <Route path="/cart" Component={Cart} />
               </Routes>
             </div>
             <Footer />

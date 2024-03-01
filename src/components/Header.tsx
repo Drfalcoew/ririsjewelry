@@ -23,7 +23,7 @@ const Header = () => {
                             action: 'Clicked Contact Me'
                         });
                     }} >
-                        {isMobile ? '' : 'cart'}
+                        {isMobile ? '' : 'Cart'}
                         <ShoppingBasketOutlinedIcon />
                     </button>
             </div>
