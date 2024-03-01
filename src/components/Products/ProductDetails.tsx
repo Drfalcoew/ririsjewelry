@@ -3,6 +3,7 @@ import './Products.css'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { ProductProps } from '../../model/Models'
 import { Button } from '@mui/material'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const ProductDetails = () => {
     const nav = useNavigate();
@@ -13,7 +14,6 @@ const ProductDetails = () => {
     if (state) {
         product = state.product as ProductProps;
     }
-    console.log('Product details: ', product);
     
 
     return (
@@ -21,7 +21,7 @@ const ProductDetails = () => {
             <div className="product-details-back-btn-container">
                 <Button variant="contained" onClick={() => nav('/products')} className='product-details-back-btn'
                     style={{fontWeight: 'bold', fontSize: isMobile ? '12px' : '14px' }}>
-                        Back
+                        <ArrowBackIcon />
                 </Button>
             </div>
             <div className="product-details-content">
