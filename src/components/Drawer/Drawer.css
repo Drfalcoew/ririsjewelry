@@ -65,3 +65,9 @@
     transform: translateX(50px); /* Move the item to the right by 50px */
     transition: width 0.5s, transform 0.5s;
 }
+
+@media screen and (max-width: 768px) {
+    .drawer-container {
+        display: none;
+    }
+}

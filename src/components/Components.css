@@ -197,6 +197,7 @@
     display: flex;
     flex: 1;
     flex-direction: column;
+    text-align: left;
     align-items: flex-start;
     justify-content: center;
     padding: 20px 30px;
@@ -244,4 +245,26 @@
     animation: none;
     background-color: var(--accent-color) !important;
     transition: background-color 0.3s ;
+}
+
+@media (max-width: 768px) {
+    .hero-panel-container {
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+        
+    }
+    .hero-panel-image-container {
+        flex: none;
+    }
+    .hero-panel-content {
+        align-items: center;
+        text-align: center !important;
+        padding: 0;
+    }
+    .hero-panel-title {
+        font-size: 4rem;
+        margin: 20px 0;
+        color: var(--text-color);
+    }
 }

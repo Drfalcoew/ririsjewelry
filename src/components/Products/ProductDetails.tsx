@@ -25,24 +25,29 @@ const ProductDetails = () => {
                 </Button>
             </div>
             <div className="product-details-content">
+                <div className='product-details-title' style={{display: isMobile ? 'block' : 'none'}}>
+                        {product.title}
+                    </div>
                 <div className="product-details-image-container">
                     <img src={product.image} alt="bracelet" className='product-image' />
                 </div>
                 <div className="product-details-item">
-                    <div style={{width: '90%', textAlign: 'left', fontSize: '32px', fontWeight: 'bold', color: '#292028', marginBottom: '20px'}}>
+                    <div className='product-details-title' style={{display: !isMobile ? 'flex' : 'none'}}>
                         {product.title}
                     </div>
                     <div style={{width: '80%', textAlign: 'left', fontSize: '18px', margin: '20px 0', color: '#5e5e5e'}}>
                         {product.description}
                     </div>
-                    <div style={{width: '80%', textAlign: 'left', fontSize: '18px', color: '#5e5e5e', padding: '15px 0'}}>
-                        ${product.price / 100}
+                    <div className='product-details-price'>
+                        <div style={{margin: isMobile ? '10px 0' : '10px 40px 0 0' , opacity: 0.7, alignItems: 'center'}}>
+                            ${product.price / 100}
+                        </div>
+                        <Button variant="contained"
+                            style={{marginTop: '10px', color: 'white', fontWeight: 'bold',
+                            padding: '10px 20px', fontSize: isMobile ? '12px' : '16px' }} className='product-details-cart-btn'>
+                                Add to cart
+                        </Button>
                     </div>
-                    <Button variant="contained"
-                        style={{marginTop: '10px', color: 'white', fontWeight: 'bold',
-                        padding: '10px 20px', fontSize: isMobile ? '12px' : '16px' }} className='product-details-cart-btn'>
-                            Add to cart
-                    </Button>
                 </div>
             </div>
         </div>

@@ -14,7 +14,7 @@ const HeroPanel = () => {
             </div>
             <div className="hero-panel-content">
                 <div>Handcrafted Jewelry</div>
-                <div style={{width: '80%', textAlign: 'left', fontSize: '18px', margin: '20px 0', color: '#5e5e5e', padding: '10px 0'}}>
+                <div style={{width: '80%', fontSize: '18px', margin: '20px 0', color: '#5e5e5e', padding: '10px 0'}}>
                     Spring 2024 is here. Shop our new collection of handcrafted, preppy jewelry.
                 </div>
                 <Button variant="contained" onClick={() => nav('/products')} 
