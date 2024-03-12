@@ -5,13 +5,15 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { ProductProps } from '../../model/Models';
+import { ProductType } from '../../model/Models';
 import { useNavigate } from 'react-router-dom';
+import { useAddToCart } from '../../pages/Cart/Cart';
 
-const Product = (props: ProductProps) => {
+const Product = (props: ProductType) => {
     const isMobile = window.innerWidth < 768;
     const price = props.price / 100;
     const useNav = useNavigate();
+    const addProductToCart = useAddToCart();
 
     const HandleClick = () => {
         console.log('Product clicked');
@@ -20,17 +22,17 @@ const Product = (props: ProductProps) => {
 
     function handleAddToCart(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
         event.stopPropagation(); // Stop the event from propagating to the parent
-        console.log('Add to cart clicked');
+        addProductToCart(props);
     }
 
     return (
         <Paper elevation={10} className="product-paper" onClick={HandleClick}>
-            <CardMedia component="img" image={props.image} sx={{height: '200px', width: '100%',
+            <CardMedia component="img" image={props.images[0]} sx={{height: '200px', width: '100%',
              objectFit: 'cover'}}
                 alt="Product" />
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                    {props.title}
+                    {props.name}
                 </Typography>
                 <Typography variant="body2" color="text.secondary" sx={{marginBottom: '30px'}}>
                     {props.description}

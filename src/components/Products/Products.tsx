@@ -1,63 +1,74 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Products.css';
+import { ProductType } from '../../model/Models';
 import Product from './Product';
+import CacheService from '../../common/CacheService';
+import Skeleton from '@mui/material/Skeleton';
+
+const cacheService = new CacheService();
 
 const Products = () => {
 
-    const products = [
-        {
-            name: 'Etherial Rose',
-            description: 'Preppy Bracelets | Smiley Face Bracelet | Rainbow Heishi Pearl Bracelet | Trendy Star White Bead Bracelet | Disc Beads | Funky Jewelry',
-            image: "/imgs/preppy_bracelet.webp",
-            price: 2000
-        },
-        {
-            name: 'Blue & White Bracelet',
-            description: 'Preppy Bracelets | Smiley Face Bracelet | Rainbow Heishi Pearl Bracelet | Trendy Star White Bead Bracelet | Disc Beads | Funky Jewelry',
-            image: "/imgs/preppy_bracelet.webp",
-            price: 749
-        },
-        {
-            name: 'Crimson Bandito',
-            description: 'Preppy Bracelets | Smiley Face Bracelet | Rainbow Heishi Pearl Bracelet | Trendy Star White Bead Bracelet | Disc Beads | Funky Jewelry',
-            image: "/imgs/preppy_bracelet.webp",
-            price: 1899
-        },
-        {
-            name: 'Spring Bracelet',
-            description: 'Preppy Bracelets | Smiley Face Bracelet | Rainbow Heishi Pearl Bracelet | Trendy Star White Bead Bracelet | Disc Beads | Funky Jewelry',
-            image: "/imgs/preppy_bracelet.webp",
-            price: 699
-        },
-        {
-            name: 'Blue & White Bracelet',
-            description: 'Preppy Bracelets | Smiley Face Bracelet | Rainbow Heishi Pearl Bracelet | Trendy Star White Bead Bracelet | Disc Beads | Funky Jewelry',
-            image: "/imgs/preppy_bracelet.webp",
-            price: 749
-        },
-        {
-            name: 'Violet Salamander',
-            description: 'Preppy Bracelets | Smiley Face Bracelet | Rainbow Heishi Pearl Bracelet | Trendy Star White Bead Bracelet | Disc Beads | Funky Jewelry',
-            image: "/imgs/preppy_bracelet.webp",
-            price: 999
-        },
-    ]
+    const [products, setProducts] = React.useState<ProductType[]>([]);
+
+    const skeletonItems = React.useMemo(() => Array.from({ length: 12 }, (_, i) => (
+        <div className="product-paper" key={i}>
+            <Skeleton variant="rectangular" width={300} height={200} />
+            <Skeleton variant="text" width={300} height={50} />
+            <Skeleton variant="text" width={300} height={50} />
+            <Skeleton variant="text" width={300} height={50} />
+        </div>
+    )), []);
+    
+    /**
+     * Fetch products from the API or cache on component mount
+     */
+    useEffect(() => {
+        const fetchData = async () => {
+            const cacheKey = 'products';
+            try {
+                const cachedProducts = cacheService.get(cacheKey);
+                if (cachedProducts) {
+                    setProducts(cachedProducts);
+                } else {
+                    const apiURL = process.env.REACT_APP_API_URL;
+                    const response = await fetch(apiURL + '/products');
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    const newProducts = await response.json() as ProductType[];
+                    setProducts(newProducts);
+                    cacheService.set(cacheKey, newProducts, 3600); // Cache for 1 hour
+                }
+            } catch (error: any) {
+                console.error("Failed to fetch products:", error);
+                // show alert to user
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    
 
     return (
         <div className="products-container">
             <div className="products-title-container">
                 <h1>SPRING COLLECTION</h1>
             </div>
+            {products.length === 0 ? (
+                <div className="products-content-container">
+                    {skeletonItems}
+                </div>
+            ) : (
             <div className="products-content-container">
-                {products.map((product, index) => {
-                    return (
-                        <Product key={index} title={product.name} description={product.description}
+                {products.map((product, index) => (
+                        <Product key={index} name={product.name} description={product.description}
                         price={product.price} id={index}
-                        image={product.image} />
-                    )
-                })
-                }
+                        images={product.images} />
+                ))}
             </div>
+            )}
         </div>
     );
 }

@@ -1,9 +1,9 @@
 
-export interface ProductProps {
+export interface ProductType {
     id: number;
-    title: string;
+    name: string;
     description: string;
-    image: string;
+    images: string[];
     price: number;
 }
 
@@ -14,7 +14,7 @@ export interface ShoppingCartProps {
     
 export interface CartItem {
     id: number;
-    title: string;
+    name: string;
     description: string;
     image: string;
     price: number;

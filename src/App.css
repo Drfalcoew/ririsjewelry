@@ -16,8 +16,8 @@
   justify-content: flex-start;
   padding-top: 10vh;
   height: 90vh;
-  width: 100%;
   overflow: hidden;
+  width: 85%;
 }
 
 .App-logo {

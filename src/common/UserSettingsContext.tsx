@@ -9,8 +9,11 @@ export type UserSettingsState = {
 };
 
 // Define new action types for user login state changes
-type UserSettingsAction =
-  | { type: 'SET_CART'; payload: ShoppingCartProps };
+export type UserSettingsAction =
+  | { type: 'SET_CART'; payload: ShoppingCartProps }
+  | { type: 'UPDATE_ITEM_QUANTITY'; payload: { id: number; quantity: number } }
+  | { type: 'REMOVE_ITEM'; payload: { id: number } };
+
 
 // Create a context with an undefined initial value
 const UserSettingsContext = createContext<{
@@ -26,19 +29,31 @@ const userSettingsReducer = (state: UserSettingsState, action: UserSettingsActio
     case 'SET_CART':
       cache.set('myCart', action.payload);
       return { ...state, cart: action.payload };
+    case 'UPDATE_ITEM_QUANTITY': {
+      const newItems = state.cart.items.map(item => {
+        if (item.id === action.payload.id) {
+          return { ...item, quantity: action.payload.quantity };
+        }
+        return item;
+      });
+      cache.set('myCart', { ...state.cart, items: newItems });
+      return { ...state, cart: { ...state.cart, items: newItems }};
+    }
+    case 'REMOVE_ITEM': {
+      const newItems = state.cart.items.filter(item => item.id !== action.payload.id);
+      cache.set('myCart', { ...state.cart, items: newItems });
+      return { ...state, cart: { ...state.cart, items: newItems }};
+    }
     default:
       return state;
   }
 };
 
+
 // Set initial state values for userLoggedIn and userData
 export const UserSettingsProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [state, dispatch] = useReducer(userSettingsReducer, {
-    cart: cache.get('myCart') || 
-      { items: [{ id: 1, title: 'Product 1', description: 'Product 1 description', price: 499, quantity: 1, image: 'https://via.placeholder.com/150' }, 
-      { id: 1, title: 'Product 1', description: 'Product 1 description', price: 599, quantity: 1, image: 'https://via.placeholder.com/150' },
-    { id: 1, title: 'Product 1', description: 'Product 1 description', price: 499, quantity: 1, image: 'https://via.placeholder.com/150' }, 
-      { id: 1, title: 'Product 1', description: 'Product 1 description', price: 599, quantity: 1, image: 'https://via.placeholder.com/150' }], total: 1098 },
+    cart: cache.get('myCart') || { items: [], total: 0 },
   });
 
   return (
