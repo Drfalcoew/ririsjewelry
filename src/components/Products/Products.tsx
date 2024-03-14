@@ -32,7 +32,7 @@ const Products = () => {
                     setProducts(cachedProducts);
                 } else {
                     const apiURL = process.env.REACT_APP_API_URL;
-                    const response = await fetch(apiURL + '/products');
+                    const response = await fetch(apiURL!); // + '/products'); for dev
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
                     }
