@@ -6,7 +6,7 @@ const Banner = () => {
     return (
         <div className="banner-container">
             <Link to="/products" className="banner-item">
-                <div>GET 20% OFF WITH PROMO CODE: BROBRO20 🛍</div>
+                Spring into your PREPPY SPIRIT with Our Latest Jewelry Collection! 🛍
             </Link>
         </div>
     )
