@@ -1,7 +1,6 @@
 
 
 /* PRODUCT COMPONENT */
-
 .products-container {
     display: flex;
     flex-direction: column;
@@ -12,6 +11,12 @@
     width: 85%;
     overflow: scroll;
     scrollbar-width: none;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.products-container::-webkit-scrollbar {
+  /*Chrome, Safari, Edge*/
+  display: none;
 }
 
 .products-title-container {

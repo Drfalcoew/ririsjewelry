@@ -10,8 +10,14 @@
     width: 85%;
     overflow: scroll;
     scrollbar-width: none;
+    /*IE10+*/
+    -ms-overflow-style: -ms-autohiding-scrollbar;
   }
   
+  .home-container::-webkit-scrollbar {
+    /*Chrome, Safari, Edge*/
+    display: none;
+  }
   .home-title-container {
     display: flex;
     flex-direction: row;
