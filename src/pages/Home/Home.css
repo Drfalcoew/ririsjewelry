@@ -18,6 +18,7 @@
     /*Chrome, Safari, Edge*/
     display: none;
   }
+  
   .home-title-container {
     display: flex;
     flex-direction: row;
