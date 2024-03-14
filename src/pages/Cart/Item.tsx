@@ -2,6 +2,8 @@ import { useState } from 'react';
 import './Cart.css';
 import { CartItem } from '../../model/Models';
 import { UserSettingsAction } from '../../common/UserSettingsContext';
+import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
+import { Button } from '@mui/material';
 
 interface ItemProps {
     item: CartItem;
@@ -31,19 +33,21 @@ const Item = (props: ItemProps) => {
 
     return (
         <div className="cart-item">
-            <img src={props.item.image} alt="Product" className="cart-item-image" />
             <div className="cart-item-details">
+                <img src={props.item.image} alt="Product" className="cart-item-image" />
                 <div className='item-info-container'>
                     <div className='item-title'>{props.item.name}</div>
-                    <p className="item-detail">item number #{props.item.id}</p>
+                    <p className="item-detail">Category: {props.item.category}</p>
                 </div>
                 <div className='item-quantity-container'>
                     <button className='item-quantity-button' onClick={() => { if (quantity > 1) updateQuantity(quantity - 1)}}>-</button>
                         <div className='item-quantity'>{quantity}</div>
                     <button className='item-quantity-button' onClick={() => updateQuantity(quantity + 1)}>+</button>
                 </div>
-                <div className='item-price-text'>${(props.item.price * quantity) / 100}</div>
-                <button className='remove-item' onClick={removeItem}>X</button>
+                <div className='item-price-text'>${((props.item.price * quantity) / 100).toFixed(2)}</div>
+                <Button sx={{color: 'black'}} className='remove-item' onClick={removeItem}>
+                    <RemoveCircleOutlineIcon />
+                </Button>
             </div>
         </div>
     );

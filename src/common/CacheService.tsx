@@ -7,7 +7,7 @@ class CacheService {
     }
   
     // Set data in the cache with an expiration time (in seconds)
-    set(key: string, data: any, expirationInSeconds: number = 3600): void {
+    set(key: string, data: any, expirationInSeconds: number = 86400): void {
       const expirationTimestamp = Date.now() + expirationInSeconds * 1000;
       const cachedData = {
         data,

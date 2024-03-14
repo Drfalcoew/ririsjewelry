@@ -5,6 +5,7 @@ export interface ProductType {
     description: string;
     images: string[];
     price: number;
+    category: string;
 }
 
 export interface ShoppingCartProps {
@@ -19,4 +20,5 @@ export interface CartItem {
     image: string;
     price: number;
     quantity: number;
+    category: string;
 }

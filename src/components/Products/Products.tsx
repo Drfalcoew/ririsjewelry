@@ -64,7 +64,7 @@ const Products = () => {
             <div className="products-content-container">
                 {products.map((product, index) => (
                         <Product key={index} name={product.name} description={product.description}
-                        price={product.price} id={index}
+                        price={product.price} id={product.id} category={product.category}
                         images={product.images} />
                 ))}
             </div>

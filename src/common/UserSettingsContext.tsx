@@ -12,7 +12,8 @@ export type UserSettingsState = {
 export type UserSettingsAction =
   | { type: 'SET_CART'; payload: ShoppingCartProps }
   | { type: 'UPDATE_ITEM_QUANTITY'; payload: { id: number; quantity: number } }
-  | { type: 'REMOVE_ITEM'; payload: { id: number } };
+  | { type: 'REMOVE_ITEM'; payload: { id: number } }
+  | { type: 'CLEAR_CART' };
 
 
 // Create a context with an undefined initial value
@@ -44,6 +45,10 @@ const userSettingsReducer = (state: UserSettingsState, action: UserSettingsActio
       cache.set('myCart', { ...state.cart, items: newItems });
       return { ...state, cart: { ...state.cart, items: newItems }};
     }
+    case 'CLEAR_CART':
+      cache.set('myCart', { items: [], total: 0 });
+      return { ...state, cart: { items: [], total: 0 }
+    };
     default:
       return state;
   }

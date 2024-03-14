@@ -15,6 +15,7 @@ import Contact from './pages/Contact/Contact';
 import About from './pages/About/About';
 import ProductDetails from './components/Products/ProductDetails';
 import Cart from './pages/Cart/Cart';
+import Success from './pages/Success/Success';
 
 // ReactGA.initialize('G-KGT5LD5SZQ');
 
@@ -42,6 +43,7 @@ function App() {
                 <Route path="/contact" Component={Contact} />
                 <Route path="/product/:id" Component={ProductDetails} />
                 <Route path="/cart" Component={Cart} />
+                <Route path="/success" Component={Success} />
               </Routes>
             </div>
             <Footer />

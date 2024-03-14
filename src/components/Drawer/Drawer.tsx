@@ -26,12 +26,10 @@ const Drawer = () => {
 
     const handleMouseEnter = (index: number) => {
         setHoveredIndex(index);
-        console.log('hovered index', hoveredIndex);
     };
 
     const handleMouseLeave = () => {
         setHoveredIndex(null);
-        console.log('hovered index', hoveredIndex);
     };
 
     return (
