@@ -7,7 +7,6 @@ import { useUserSettings } from '../common/UserSettingsContext';
 
 const Header = () => {
     const nav = useNavigate();
-    const isMobile = window.innerWidth < 768;
     const { state } = useUserSettings();
 
     return (
@@ -27,7 +26,7 @@ const Header = () => {
                                 action: 'Clicked Contact Me'
                             });
                         }} >
-                            {isMobile ? '' : 'Cart'}
+                            {'Cart'}
                         <ShoppingBasketOutlinedIcon />
                     </button>
                 </Badge>

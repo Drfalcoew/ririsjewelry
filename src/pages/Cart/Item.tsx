@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './Cart.css';
 import { CartItem } from '../../model/Models';
 import { UserSettingsAction } from '../../common/UserSettingsContext';
-import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
+import TrashIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import { Button } from '@mui/material';
 
 interface ItemProps {
@@ -13,6 +13,7 @@ interface ItemProps {
 const Item = (props: ItemProps) => {
 
     const [quantity, setQuantity] = useState(props.item.quantity);
+    const isMobile = window.innerWidth < 768;
 
     const updateQuantity = (newQuantity: number) => {
         setQuantity(newQuantity);
@@ -37,16 +38,17 @@ const Item = (props: ItemProps) => {
                 <img src={props.item.image} alt="Product" className="cart-item-image" />
                 <div className='item-info-container'>
                     <div className='item-title'>{props.item.name}</div>
-                    <p className="item-detail">Category: {props.item.category}</p>
+                    {isMobile ? <p className="item-detail">${((props.item.price * quantity) / 100).toFixed(2)}</p> 
+                    : <p className="item-detail">Category: {props.item.category}</p>}
                 </div>
                 <div className='item-quantity-container'>
                     <button className='item-quantity-button' onClick={() => { if (quantity > 1) updateQuantity(quantity - 1)}}>-</button>
                         <div className='item-quantity'>{quantity}</div>
                     <button className='item-quantity-button' onClick={() => updateQuantity(quantity + 1)}>+</button>
                 </div>
-                <div className='item-price-text'>${((props.item.price * quantity) / 100).toFixed(2)}</div>
+                <div className='item-price-text' style={{display: isMobile ? 'none' : 'block'}}>${((props.item.price * quantity) / 100).toFixed(2)}</div>
                 <Button sx={{color: 'black'}} className='remove-item' onClick={removeItem}>
-                    <RemoveCircleOutlineIcon />
+                    <TrashIcon />
                 </Button>
             </div>
         </div>

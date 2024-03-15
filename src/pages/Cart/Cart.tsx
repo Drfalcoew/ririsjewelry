@@ -50,7 +50,7 @@ const Cart = () => {
         // Use fetch API to send the paymentMethodId to your backend
         const apiURL = process.env.REACT_APP_API_URL;
 
-        fetch(apiURL!, { //  + '/checkout/session' on dev
+        fetch(apiURL!, { //  + '/checkout/session' { //on dev
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
