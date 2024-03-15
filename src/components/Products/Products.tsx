@@ -32,13 +32,14 @@ const Products = () => {
                     setProducts(cachedProducts);
                 } else {
                     const apiURL = process.env.REACT_APP_API_URL;
-                    const response = await fetch(apiURL+ '/products'); // for dev
+                    const response = await fetch(apiURL!);
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
                     }
-                    const newProducts = await response.json() as ProductType[];
+                    const res = await response.json();
+                    const newProducts = res.entity;
                     setProducts(newProducts);
-                    // cacheService.set(cacheKey, newProducts);
+                    cacheService.set(cacheKey, newProducts);
                 }
             } catch (error: any) {
                 console.error("Failed to fetch products:", error);

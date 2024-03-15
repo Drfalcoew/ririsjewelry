@@ -56,12 +56,11 @@ const Cart = () => {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(checkoutRequest),
-        })
-        .then(response => response.text())
-        .then(url => {
+        }).then(response => response.json())
+        .then(res => {
             setLoading(false);
             setSuccess(true);
-            window.location.href = url;
+            window.location.href = res.entity;
         })
         .catch((error) => {
             console.error('Error:', error);
