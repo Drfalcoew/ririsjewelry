@@ -167,11 +167,6 @@
         background-color: rgba(0, 0, 0, 0.12);
         font-size: 14px;
     }
-    .footer-container-left {}
-    .footer-container-right {}
-    .footer-item-label {
-        display: none;
-    }
 }
 
 /* HERO PANEL */

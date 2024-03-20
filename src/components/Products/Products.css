@@ -32,7 +32,8 @@
 }
 
 .product-paper {
-    width: calc(25% - 40px); /* 33.33% for each product with some margin */
+    max-width: 300px;
+    min-width: 300px;
     padding: 20px;
     margin: 20px;
     background-color: var(--highlight) !important;
@@ -236,6 +237,22 @@
         width: calc(85% - 40px);
     }
 
+    .product-page {
+        justify-content: center;
+        align-items: center;
+        padding-top: 2.5vh;
+    }
+
+    .product-image-container {
+        flex: 0;
+    }
+
+    .product-details-extra-images-container {
+        flex: 0;
+    }
+
+    
+
     .product-details-container {
         width: 90%;
         margin: 0;
@@ -248,6 +265,7 @@
 
     .product-details-title {
         justify-content: center;
+        text-align: center;
     }
 
     .product-details-price {
@@ -266,6 +284,7 @@
 
     .product-details-image-container {
         margin: 0 2vw;
+        min-height: 0;
     }
 
     .product-image {

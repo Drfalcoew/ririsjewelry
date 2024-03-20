@@ -1,6 +1,5 @@
 import { Snackbar } from "@mui/material";
 import MuiAlert, { AlertProps } from '@mui/material/Alert';
-import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import './Contact.css';
 import React, { useState } from 'react';
@@ -52,10 +51,7 @@ const Contact = () => {
                         Follow us on social media for updates and promotions!
                     </div>
                     <div className="social-media-container">
-                        <a href="https://www.instagram.com/riri_jewelry/" target="_blank" rel="noreferrer">
-                            <InstagramIcon sx={{ color: '#D42D79', height: 40, width: 40 }} className="social-media-item" />
-                        </a>
-                        <a href="https://www.youtube.com/RiriJewelry" target="_blank" rel="noreferrer">
+                        <a href="https://www.youtube.com/@Preppyavenue2?si=l9xLYBaNG45eNAeF" target="_blank" rel="noreferrer">
                             <YouTubeIcon sx={{ color: 'red', height: 40, width: 40 }} className="social-media-item" />
                         </a>
                     </div>

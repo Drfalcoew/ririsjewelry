@@ -49,7 +49,7 @@ const ProductDetails = () => {
                         <div style={{margin: isMobile ? '10px 0' : '10px 40px 0 0' , opacity: 0.7, alignItems: 'center', fontSize: '20px', fontWeight: 700}}>
                                 ${product.price / 100}
                             </div>
-                        <div style={{width: '80%', textAlign: 'left', fontSize: '18px', margin: '20px 0', color: '#5e5e5e'}}>
+                        <div style={{width: '80%', textAlign: isMobile ? 'center' : 'left', fontSize: '18px', margin: '20px 0', color: '#5e5e5e'}}>
                             {product.description}
                         </div>
                         <div className='product-details-price'>

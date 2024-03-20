@@ -38,3 +38,31 @@
     width: 100px;
     margin: 20px;
 }
+
+@media (max-width: 768px) {
+    .about-container {
+        height: 90%;
+        margin-top: 5vh;
+        margin-bottom: 10vh;
+    }
+
+    .about-content {
+        height: 100%;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .img-banner {
+        width: 100%;
+        margin-top: 5vh;
+    }
+
+    .about-text {
+        width: 90%;
+    }
+
+    .preppy-img {
+        width: 50px;
+    }
+}
